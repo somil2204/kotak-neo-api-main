@@ -116,11 +116,11 @@ class NeoAPI:
 
         view_token = neo_api_client.LoginAPI(self.api_client).generate_view_token(password=password, mobilenumber=mobilenumber,
                                                                                   userid=userid, pan=pan, mpin=mpin)
-        if "error" not in view_token:
-            gen_otp = neo_api_client.LoginAPI(self.api_client).generate_otp()
-            # print(gen_otp)
-        else:
-            gen_otp = {'error': [{'code': '10522', 'message': 'Issues while generating OTP! Try to login again.'}]}
+        # if "error" not in view_token:
+        #     gen_otp = neo_api_client.LoginAPI(self.api_client).generate_otp()
+        #     # print(gen_otp)
+        # else:
+        #     gen_otp = {'error': [{'code': '10522', 'message': 'Issues while generating OTP! Try to login again.'}]}
         return view_token
 
     def session_2fa(self, OTP):
